@@ -1,41 +1,64 @@
+English | [日本語](ja/README.md) | [한국어](ko/README.md)
+
 # ruby-task-cli
 
-コマンドラインで動くシンプルなタスク管理ツールです。タスクの追加・一覧表示・完了・削除ができます。
-データは `tasks.json` に保存されます。
+![Ruby](https://img.shields.io/badge/Ruby-CC342D?logo=ruby&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## 必要環境
+## Overview
 
-- Ruby 2.7 以上
+A simple command-line task management tool. You can add, list, complete, and delete tasks.
 
-## 使い方
+## Demo
+
+![Demo](docs/demo.png)
+
+*Actual output. The CLI interface is in Japanese.*
+
+## Features
+
+- Add tasks with a title
+- List all tasks with their status
+- Mark tasks as done
+- Delete tasks
+
+## Requirements
+
+- Ruby 2.7 or higher
+
+## Quick Start
 
 ```bash
-ruby main.rb add 牛乳を買う
+git clone https://github.com/mivork/ruby-task-cli.git
+cd ruby-task-cli
+ruby main.rb add "Buy milk"
 ruby main.rb list
-ruby main.rb done 1
-ruby main.rb delete 1
 ```
 
-## コマンド一覧
+## Usage
 
-| コマンド | 説明 |
+| Command | Description |
 |---|---|
-| `add <タスク名>` | タスクを追加する |
-| `list` | タスク一覧を表示する |
-| `done <タスクID>` | タスクを完了にする |
-| `delete <タスクID>` | タスクを削除する |
+| `add <task name>` | Add a new task |
+| `list` | List all tasks |
+| `done <task ID>` | Mark a task as done |
+| `delete <task ID>` | Delete a task |
 
-## データ形式
+## Data Format
 
-`tasks.json` に JSON 形式で保存されます。
+Tasks are saved in `tasks.json` in JSON format.
 
 ```json
 [
   {
     "id": 1,
-    "title": "牛乳を買う",
+    "title": "Buy milk",
     "done": false,
     "created_at": "2026-11-09T16:00:00+09:00"
   }
 ]
 ```
+
+## License
+
+This project is licensed under the MIT License.
